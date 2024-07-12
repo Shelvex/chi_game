@@ -18,6 +18,10 @@ class player:
 
         # energy chi default 0
         self.chi = 0
+        self.opponent = None
+
+    def get_opponent(self):
+        return self.opponent
 
     def get_operation(self):
         return self.operation_status
@@ -25,7 +29,53 @@ class player:
     def get_chi(self):
         return self.chi
 
-    def operate(self, operation):
+    def pvp_operate(self):
+        prompt = 'Choose operation:'
+        prompt2 = 'Choose an Opponent:'
+        x = input(prompt)
+        operation = int(x)
+        if operation == 0:
+            self.chi = self.chi + 1
+            self.operation_status = operation
+
+        elif self.chi >= operation:
+            print('fuck')
+            self.chi = self.chi - operation
+            self.operation_status = operation
+            # 要缩进进来啊 兄弟
+            if operation < 3:
+                opponent = int(input(prompt2))
+                self.opponent = opponent
+
+        elif 4 <= operation <=5:
+            self.operation_status = operation
+
+        else:
+            print('no enough chi OR wrong status')
+
+
+    def operate(self):
+        # 在这里判断 可行 与 打气 ? 是否最优？
+        prompt = 'Choose operation:'
+        operation = int(input(prompt))
+
+        # real player
+        # 0 get chi 1 small attack 2 big attack 3 boom 4 reflect 5 defend
+        if operation == 0:
+            self.chi = self.chi + 1
+            self.operation_status = operation
+
+        elif self.chi >= operation:
+            self.chi = self.chi - operation
+            self.operation_status = operation
+
+        elif 4 <= operation <= 5:
+            self.operation_status = operation
+
+        else:
+            print('no enough chi OR wrong status')
+
+    def comp_operate(self, operation):
 
         # real player
         # 0 get chi 1 small attack 2 big attack 3 boom 4 reflect 5 defend
@@ -65,7 +115,7 @@ class player:
         self.health = self.health - 1
 
 
-class game:
+class CvP_game:
     def __init__(self):
         self.player_a = player()
         self.player_b = player()
@@ -188,38 +238,38 @@ def print_operation(number):
     elif number == 5:
         print('DEFEND! ]]]]')
 
-
 def explanation():
     print('Welcome to chi game')
     print('*************************************')
-    print("Belows are instructions: CHI 1.1.1")
-    print("Get chi and kill the computer")
+    print("Belows are instructions: CHI 1.1.2")
+    print("Get chi and kill the computer (input 0)")
+    print("Or you can try pvp mode by inputting 1")
+    print()
+    mode = input()
+
     print("0: Get chi(used  for attack operation)")
     print("1: Small Attack(need 1 chi), deal 0.5 damage")
     print("2: BIG Attack(need 2 chi), deal 1 damage(can kill directly)")
-    print("3: BOOOOOOOOOM!(need 3 chi), deal aoe damage, ")
+    print("3: BOOOOOOOOOM!(need 3 chi), deal aoe damage, prior to BIG attack")
     print("4: Reflect, can reflect small attack to opponent")
     print("5: Defend, can defend all attack including BOOOOOM!")
 
+    return mode
 
-if __name__ == '__main__':
-    mygame = game()
-
-    explanation()
-    prompt = 'Choose operation:'
+def initial_cvp_game():
+    mygame = CvP_game()
 
     while mygame.player_a.health > 0 and mygame.player_b.health > 0:
         mygame.player_a.print_status(name='ME')
         mygame.player_b.print_status(name='Computer')
 
         while mygame.player_a.get_operation() < 0:
-            my_operation = int(input(prompt))
             # variable type need to convert
-            mygame.player_a.operate(my_operation)
+            mygame.player_a.operate()
 
         # 电脑暂时一直打气
         com_operation = int(computer_operation(mygame.player_b.chi))
-        mygame.player_b.operate(com_operation)
+        mygame.player_b.comp_operate(com_operation)
 
         print('My operation:')
         print_operation(mygame.player_a.get_operation())
@@ -235,3 +285,6 @@ if __name__ == '__main__':
         print('Great job, defeating a programme..,')
 
     input("Would you like another round? (if so just restart the game)")
+
+
+# if __name__ == '__main__':
