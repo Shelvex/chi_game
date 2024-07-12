@@ -4,6 +4,11 @@ import socket
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 连接到服务器
+# 127.0.0.1 虚拟网络？ 本地网络
+# 像stable diffusion那样 本地网络服务器 或者说终端
+
+# 10.28.2.245 笔记本IPv4地址
+
 client_socket.connect(('127.0.0.1', 12345))
 
 # 发送数据

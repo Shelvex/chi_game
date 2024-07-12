@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd28eb7f-1148-4436-894f-471e5b1554bb" name="Changes" comment="chi version 1.1.1">
-      <change afterPath="$PROJECT_DIR$/System.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/connection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pvp_game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+    <list default="true" id="bd28eb7f-1148-4436-894f-471e5b1554bb" name="Changes" comment="chi version 1.1.2 local pvp game is available">
+      <change afterPath="$PROJECT_DIR$/My_Game_Client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/My_Game_Server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/cvp_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +24,15 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -41,6 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.My_Game_Server.executor": "Run",
     "Python.System.executor": "Run",
     "Python.client.executor": "Run",
     "Python.connection.executor": "Run",
@@ -50,7 +57,7 @@
     "Python.server.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "local__pvp",
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
@@ -78,12 +85,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720746371537</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chi version 1.1.2 local pvp game is available">
+      <option name="closed" value="true" />
+      <created>1720770098214</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720770098214</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chi version 1.1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="chi version 1.1.1" />
+    <MESSAGE value="chi version 1.1.2 local pvp game is available" />
+    <option name="LAST_COMMIT_MESSAGE" value="chi version 1.1.2 local pvp game is available" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

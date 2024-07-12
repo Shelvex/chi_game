@@ -5,6 +5,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # 绑定主机和端口
 server_socket.bind(('127.0.0.1', 12345))
+# 10.28.2.245 笔记本IPv4地址
 
 # 监听连接
 server_socket.listen()
